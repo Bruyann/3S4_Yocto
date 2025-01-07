@@ -15,6 +15,9 @@ $(BIN): gpio-toggle.c
 install: $(BIN)
 	mkdir -p $(INSTALL_DIR)/usr/bin
 	cp $(BIN) $(INSTALL_DIR)/usr/bin/
+	mkdir -p $(INSTALL_DIR)/etc/init.d
+	cp install.sh $(INSTALL_DIR)/etc/init.d/
+	chmod 0755 $(INSTALL_DIR)/etc/init.d/install.sh
 
 # Nettoyage des fichiers générés
 clean:
